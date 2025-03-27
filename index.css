@@ -61,6 +61,11 @@ body {
     padding: 10px;
 }
 
+.cuadro2 #logo{
+    margin: 5%;
+    max-width: 30%;
+}
+
 .cuadro2 h3 {
     margin-top: 1px;
 }
