@@ -100,5 +100,10 @@ body {
 .cuadro3 .colText{
     text-align: left;
 }
+
+.historia {
+    display: flex;
+    align-items: center;
+}
 /***** End AcercaDe *****/
 
