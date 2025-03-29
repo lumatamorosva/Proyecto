@@ -19,3 +19,11 @@ function initMap() {
 
 // Llamada inicial para cargar el mapa
 initMap();
+
+/*Contacto*/
+const listener = document.querySelector("convertlink");
+listener.addEventListener("click", () => alert("This is a listener"));
+
+function greeting(){
+    alert("Hello");
+}

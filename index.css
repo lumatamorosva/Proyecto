@@ -2,6 +2,7 @@ body {
      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      padding: 5%;
      padding-top: 0%;
+     background-image: url(Images/Background.jpg);
 }
 
 .title1 {
@@ -23,12 +24,14 @@ body {
     font-size: small;
 }
 
-/***** AcercaDe *****/ 
+/***** AcercaDe y ubicación  *****/ 
 .cuadro {
     border: solid black;
     padding: 5%;
     text-align: center;
     margin: 15px;
+    background-color: rgb(204,220,222,0.95);
+
 }
 
 .cuadro h3 {
@@ -105,5 +108,18 @@ body {
     display: flex;
     align-items: center;
 }
-/***** End AcercaDe *****/
+/***** End AcercaDe y ubicación *****/
 
+/***** Start Contacto *****/
+.cuadro4 {
+    text-align: left;
+}
+
+.cuadro4 .ayuda{
+    align-items: center;
+}
+
+.cuadro4 h3 {
+    margin-top: 1px;
+}
+/***** End Contacto *****/
