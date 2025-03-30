@@ -21,9 +21,12 @@ function initMap() {
 initMap();
 
 /*Contacto*/
-const listener = document.querySelector("convertlink");
-listener.addEventListener("click", () => alert("This is a listener"));
 
-function greeting(){
-    alert("Hello");
-}
+/*Principal*/
+function ampliacionProducts(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }

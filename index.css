@@ -1,3 +1,4 @@
+/***** Start General *****/
 body {
      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      padding: 5%;
@@ -16,8 +17,6 @@ body {
 .navbar-nav {
     background-color: rgb(1,1,1,0.0);
 }
-
-
 
 .title1 {
     color: #003366;
@@ -38,14 +37,119 @@ body {
     font-size: small;
 }
 
-/***** AcercaDe y ubicación  *****/ 
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0c6863;
+    width: 100%;
+    background-color: rgb(204,220,222,0.95);
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+/***** End General *****/
+
+/***** Start Principal *****/
+.galeria .wow {
+    max-width: 600px;
+}
+
+.carousel1 img{
+    object-fit: cover;
+    max-width: 80%;
+}
+
+.productos {
+    background-color: rgb(204,220,222,0.95);
+}
+
+.productos .column {
+    float: left;
+    max-width: 80px;
+    padding: 10px;
+  }
+  
+  .productos .column img {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  
+  .productos .column img:hover {
+    opacity: 1;
+  }
+  
+  .productos .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .productos .container {
+    position: relative;
+    text-align: center;
+    display: none;
+  }
+  
+  #imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: #0c6863;
+    font-size: 20px;
+    background-color: rgba(254, 254, 254);
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  #expandedImg {
+    max-width: 200px;
+  }
+  
+  .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: red;
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+ .noticias .cuadroNoticias h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0c6863;
+    text-align: left;
+}
+
+.noticias .cuadroNoticias {
+    padding: 10px;
+    border: solid black;
+    text-align: center;
+    background-color: rgb(204,220,222,0.95);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cuadroNoticias img {
+    max-width: 100%;
+}
+
+.noticias {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/***** End Principal *****/
+
+/***** Start AcercaDe y ubicación  *****/ 
 .cuadro {
     border: solid black;
     padding: 5%;
     text-align: center;
     margin: 15px;
     background-color: rgb(204,220,222,0.95);
-
 }
 
 .cuadro h3 {
@@ -53,8 +157,11 @@ body {
     font-size: 20px;
     font-weight: bold;
     color: #0c6863;
-    margin-top: 20%;
     width: 100%;
+}
+
+.cuadro .dejalos {
+    margin-top: 20%;
 }
 
 .cuadro h4 {
