@@ -187,6 +187,10 @@ h3 {
     margin-bottom: 20px;
     background-color: rgb(204,220,222,0.9);
 }
+
+.noticias .col-md-4 {
+    align-content: center;
+}
 /***** End Principal *****/
 
 /***** Start AcercaDe y ubicación  *****/ 
@@ -308,7 +312,13 @@ h3 {
     align-items: center;
 }
 
-.cuadro4 .strays{
+.cuadro4 a {
+    color: #0c6863;
+}
+
+.cuadro4 a:hover {
+    color: #5b76e3;
+    font-size: large;
 }
 
 .cuadro4 h3 {
