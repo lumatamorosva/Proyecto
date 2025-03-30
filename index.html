@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
     <!-- Bootstrap CSS v5.2.1 -->
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-    crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-md sticky-top p-0">
@@ -41,145 +39,148 @@
         </div>
     </nav>
     <!-- Navbar End -->
-     
-    <!-- Productos Start -->
-     <div class="productos">
-         <h3>Servicios disponibles</h3>
-        <div class="row">
-            <div class="column">
-              <img src="Images/iconairblow.svg" alt="Secado rápido" onclick="ampliacionProducts(this);">
-            </div>
-            <div class="column">
-              <img src="Images/iconcomb.svg" alt="Cepillado" onclick="ampliacionProducts(this);">
-            </div>
-            <div class="column">
-                <img src="Images/iconconsult.svg" alt="Consultas con expertos" onclick="ampliacionProducts(this);">
-              </div>
-              <div class="column">
-                <img src="Images/iconfilenails.svg" alt="Manicura canina" onclick="ampliacionProducts(this);">
-              </div>
-              <div class="column">
-                <img src="Images/iconnoflea.svg" alt="Eliminación de parásitos" onclick="ampliacionProducts(this);">
-              </div>
-              <div class="column">
-                <img src="Images/iconpadscream.svg" alt="Tratamiento de almoadillas" onclick="ampliacionProducts(this);">
-              </div>
-              <div class="column">
-                <img src="Images/iconperfume.svg" alt="Perfumado" onclick="ampliacionProducts(this);">
-              </div>
-              <div class="column">
-                <img src="Images/iconshower.svg" alt="Duchas" onclick="ampliacionProducts(this);">
-              </div>
-              <div class="column">
-                <img src="Images/iconspecialcare.svg" alt="Aplicación de tintes" onclick="ampliacionProducts(this);">
-              </div>
-              <div class="column">
-                <img src="Images/iconteethbrush.svg" alt="Lavado dental" onclick="ampliacionProducts(this);">
-              </div>
-              <div class="column">
-                <img src="Images/icontoys.svg" alt="Juguetería" onclick="ampliacionProducts(this);">
-              </div>
-              <div class="column">
-                <img src="Images/icontowel.svg" alt="Artículos para higiene canina" onclick="ampliacionProducts(this);">
-              </div>
-     </div>
-      <!-- The expanding image container -->
-      <div class="container">
-        <!-- Close the image -->
-        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-        <!-- Expanded image -->
-        <img id="expandedImg" style="width:100%">
-        <!-- Image text -->
-        <div id="imgtext"></div>
-      </div>
-    <!-- Productos End -->
-
-    <!-- Carousel Start -->
-    <div class="galeria">
-        <h3>Galería</h3>
-        <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
-            <div id="header-carousel" class="carousel1 carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="w-100" src="Images/Dog1.jpg" alt="Image">
+     <div id="contenidoPrincipal">
+        <!-- Productos Start -->
+        <div class="productos">
+            <div id="center">
+                <h3>Servicios disponibles</h3>
+                <div class="row">
+                    <div class="column">
+                        <img src="Images/iconairblow.svg" alt="Secado rápido" onclick="ampliacionProducts(this);">
                     </div>
-                    <div class="carousel-item active">
-                        <img class="w-100" src="Images/Dog2.jpg" alt="Image">
+                    <div class="column">
+                        <img src="Images/iconcomb.svg" alt="Cepillado" onclick="ampliacionProducts(this);">
                     </div>
-                    <div class="carousel-item active">
-                        <img class="w-100" src="Images/Dog3.jpg" alt="Image">
+                    <div class="column">
+                        <img src="Images/iconconsult.svg" alt="Consultas con expertos" onclick="ampliacionProducts(this);">
                     </div>
-                    <div class="carousel-item active">
-                        <img class="w-100" src="Images/Dog4.jpg" alt="Image">
+                    <div class="column">
+                        <img src="Images/iconfilenails.svg" alt="Manicura canina" onclick="ampliacionProducts(this);">
                     </div>
-                    <div class="carousel-item active">
-                        <img class="w-100" src="Images/Dog5.jpg" alt="Image">
+                    <div class="column">
+                        <img src="Images/iconnoflea.svg" alt="Eliminación de parásitos" onclick="ampliacionProducts(this);">
                     </div>
-                    <div class="carousel-item active">
-                        <img class="w-100" src="Images/Dog6.jpg" alt="Image">
+                    <div class="column">
+                        <img src="Images/iconpadscream.svg" alt="Tratamiento de almoadillas" onclick="ampliacionProducts(this);">
                     </div>
-                    <div class="carousel-item active">
-                        <img class="w-100" src="Images/Dog7.jpg" alt="Image">
+                    <div class="column">
+                        <img src="Images/iconperfume.svg" alt="Perfumado" onclick="ampliacionProducts(this);">
                     </div>
-                    <div class="carousel-item active">
-                        <img class="w-100" src="Images/Dog8.jpg" alt="Image">
+                    <div class="column">
+                        <img src="Images/iconshower.svg" alt="Duchas" onclick="ampliacionProducts(this);">
                     </div>
-                    <div class="carousel-item active">
-                        <img class="w-100" src="Images/Dog9.jpg" alt="Image">
+                    <div class="column">
+                        <img src="Images/iconspecialcare.svg" alt="Aplicación de tintes" onclick="ampliacionProducts(this);">
+                    </div>
+                    <div class="column">
+                        <img src="Images/iconteethbrush.svg" alt="Lavado dental" onclick="ampliacionProducts(this);">
+                    </div>
+                    <div class="column">
+                        <img src="Images/icontoys.svg" alt="Juguetería" onclick="ampliacionProducts(this);">
+                    </div>
+                    <div class="column">
+                        <img src="Images/icontowel.svg" alt="Artículos para higiene canina" onclick="ampliacionProducts(this);">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <!-- The expanding image container -->
+                <div class="container">
+                    <!-- Close the image -->
+                    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                    <!-- Expanded image -->
+                    <img id="expandedImg" style="width:100%">
+                    <!-- Image text -->
+                    <div id="imgtext"></div>
+                </div>
             </div>
         </div>
-     </div>
-    <!-- Carousel End -->
+        <!-- Productos End -->
 
-    <!-- Noticias Start -->
-     <div class="noticias">
-        <div class="cuadroNoticias">
-            <div class="col-md-8 col-sm-12">
-                <h3>¿Qué hay de nuevo?</h3>
-                <h4>Próximamente, nuevo servicio será implementado. Descubre de que se trata.
-                    <br>Desde el inicio, el brindar atención personalizada para cubrir el rango
-                    completo de necesidades de nuestros clientes, nos ha caracterizado; por lo 
-                    que siempre estamos buscando la forma de mejorar.
-                    <br>A partir de Julio, vamos a abrir formalmente el nuevo servicio de hotel
-                    canino; donde ellos podrán hospedarse de manera cómoda y segura, por períodos
-                    definidos en caso de que no puedan acompañarte. El recinto contará con todas 
-                    las amenidades para mantener a tus peluditos mimados y entretenidos durante
-                    toda su estancia.
-                </h4>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <img src="Images/building.jpg" alt="Tienda">
+        <!-- Carousel Start -->
+        <div class="galeria">
+            <h3>Galería</h3>
+            <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+                <div id="header-carousel" class="carousel1 carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="w-100" src="Images/Dog2.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-item active">
+                            <img class="w-100" src="Images/Dog3.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-item active">
+                            <img class="w-100" src="Images/Dog4.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-item active">
+                            <img class="w-100" src="Images/Dog5.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-item active">
+                            <img class="w-100" src="Images/Dog6.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-item active">
+                            <img class="w-100" src="Images/Dog7.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-item active">
+                            <img class="w-100" src="Images/Dog8.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-item active">
+                            <img class="w-100" src="Images/Dog9.jpg" alt="Image">
+                        </div>
+                        <div class="carousel-item active">
+                            <img class="w-100" src="Images/Dog1.jpg" alt="Image">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
         </div>
-     </div>
-    
-    <!-- Noticias End -->
+        <!-- Carousel End -->
 
-    <!-- Agradecimiento Start -->
-    <!-- Agradecimiento End -->
+        <!-- Noticias Start -->
+        <div class="noticias">
+            <div class="cuadroNoticias">
+                <div class="col-md-8 col-sm-12">
+                    <h3>¿Qué hay de nuevo?</h3>
+                    <h4>¡Construcción en progreso!
+                        <br><br>Próximamente, un nuevo servicio será implementado. Descubre de que se trata.
+                        <br><br>Desde el inicio, el brindar atención personalizada para cubrir el rango
+                        completo de necesidades de nuestros clientes, nos ha caracterizado; por lo
+                        que siempre estamos buscando la forma de mejorar.
+                        <br><br>A partir de Julio, vamos a abrir formalmente el nuevo servicio de hotel
+                        canino; donde ellos podrán hospedarse de manera cómoda y segura, por períodos
+                        definidos en caso de que no puedan acompañarte. El recinto contará con todas
+                        las amenidades para mantener a tus peluditos mimados y entretenidos durante
+                        toda su estancia.
+                    </h4>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <img src="Images/building.jpg" alt="Tienda">
+                </div>
+            </div>
+        </div>
+        <!-- Noticias End -->
+
+        <!-- Agradecimiento Start -->
+        <!-- Agradecimiento End -->
+    </div>
 
     <!-- Footer Start -->
     <div class="footer container-fluid copyright py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    &copy; <a class="border-bottom" href="#">Lyra's Grooming</a>, All Right Reserved.
-                </div>
-                <div class="col-md-12">
-                    Designed By <a class="border-bottom" href="https://github.com/lumatamorosva?tab=repositories">Luis Matamoros</a> for IDW512 Final Proyect <a href="https://www.utn.ac.cr/">UTN</a>
-                </div>
+        <div class="row">
+            <div class="col-md-12">
+                &copy; <a class="border-bottom" href="#">Lyra's Grooming</a>, All Right Reserved.
+            </div>
+            <div class="col-md-12">
+                Designed By <a class="border-bottom" href="https://github.com/lumatamorosva?tab=repositories">Luis
+                    Matamoros</a> IDW512 Final Proyect <a href="https://www.utn.ac.cr/">UTN</a>
             </div>
         </div>
     </div>
@@ -187,7 +188,5 @@
 
     <script src="index.js"></script>
 </body>
-
-
 
 </html>
