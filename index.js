@@ -30,3 +30,19 @@ function ampliacionProducts(imgs) {
     imgText.innerHTML = imgs.alt;
     expandImg.parentElement.style.display = "block";
   }
+
+  function goToFacebook() {
+    window.open("https://www.facebook.com/invalid_page");
+  }
+
+  function goToInstagram() {
+    window.open("https://www.instagram.com/[username]/");
+  }
+
+  function goToYoutube() {
+    window.open("https://www.youtube.com/watch?v=[video_id]");
+  }
+
+  function goToWhatsApp() {
+    window.open("https://wa.me/11234567890");
+  }

@@ -191,6 +191,27 @@ h3 {
 .noticias .col-md-4 {
     align-content: center;
 }
+
+.redes {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: right;
+}
+
+.redes {
+    background-color: rgb(0,0,0,0.80);
+    color: white;
+    border-bottom: solid;
+}
+
+.redes img {
+    margin: 10px;
+}
+
+.redes img:hover {
+    transform: scale(2);
+    cursor: pointer;
+}
 /***** End Principal *****/
 
 /***** Start AcercaDe y ubicación  *****/ 
