@@ -16,10 +16,6 @@ function initMap() {
                 title: "Encuentranos justo aquí!"
             });
         }
-
-// Llamada inicial para cargar el mapa
-initMap();
-
 /*Contacto*/
 
 /*Principal*/

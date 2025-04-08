@@ -302,6 +302,16 @@ h3 {
     flex-wrap: wrap;
 }
 
+.multimedia {
+    display: flex;
+    justify-content: center;
+}
+
+.multimedia .video {
+    width: 90%;
+    aspect-ratio: 16 /9;
+}
+
 .modalidades {
     display: flex;
     flex-wrap: wrap;
