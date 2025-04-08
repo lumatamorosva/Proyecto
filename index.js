@@ -42,3 +42,8 @@ function ampliacionProducts(imgs) {
   function goToWhatsApp() {
     window.open("https://wa.me/11234567890");
   }
+
+  /*Historia*/
+  function getHistoria(){
+    const historia = fetch()
+  }
