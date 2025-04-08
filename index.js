@@ -44,6 +44,17 @@ function ampliacionProducts(imgs) {
   }
 
   /*Historia*/
-  function getHistoria(){
-    const historia = fetch()
+  async function getHistoria(){
+    const contenedor1 = document.getElementById("mostrarHistoria");
+    let parrafos = [];
+    let texto = "Prueba";
+    let counter = 0;
+    //API
+    const historia = await fetch("https://lumatamorosva.github.io/Proyecto/historia.json")
+    .then(response => response.json())
+    .then(data => {parrafos.push(data);})
+
+    //Enviar al frontend
+    contenedor1.innerHTML = (parrafos[0]).parrafo1 + "<br><br>" + (parrafos[0]).parrafo2  + "<br><br>" + (parrafos[0]).parrafo3  + "<br><br>" + (parrafos[0]).parrafo4;
+    
   }
