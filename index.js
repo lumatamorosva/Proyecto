@@ -52,7 +52,7 @@ function ampliacionProducts(imgs) {
     .then(response => response.json())
     .then(data => {lista.push(data);})
     lista.forEach(item =>{
-      listaActual.add(item.comentario);
+      listaActual.push(item.comentario);
     });
     //Mostrarlos
     listaActual.forEach(function(item){
