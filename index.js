@@ -37,6 +37,8 @@ function ampliacionProducts(imgs) {
       nuevo.classList.add('Comentario');
       nuevo.textContent = nuevoComentario.value.trim();
       listaComentarios.appendChild(nuevo);
+      //guardar en JSON
+      guardarComentario(nuevoComentario.value.trim());
       //Se limpia el campo de texto
       nuevoComentario.value = "";
     }
@@ -66,9 +68,24 @@ function ampliacionProducts(imgs) {
     
   }
 
-  function guardarComentario(num,comment) {
-    //const aGuardar = {numero:num,comentario:comment};
+  async function guardarComentario(comment) {
+    const aGuardar = {"comentario": comment};
+    const response = await fetch("https://lumatamorosva.github.io/Proyecto/comentarios.json");
+    if(response.ok){
+      const data = await response.json();
+      data.comentarios.push(aGuardar);
 
+      const saveResponse = await fetch("https://lumatamorosva.github.io/Proyecto/comentarios.json", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      if(saveResponse.ok) {
+        alert("Yes");
+      }
+    }
   }
 
   //Redes
