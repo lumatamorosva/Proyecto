@@ -19,6 +19,7 @@ function initMap() {
 /*Contacto*/
 
 /*Principal*/
+//Servicios
 function ampliacionProducts(imgs) {
     var expandImg = document.getElementById("expandedImg");
     var imgText = document.getElementById("imgtext");
@@ -27,6 +28,30 @@ function ampliacionProducts(imgs) {
     expandImg.parentElement.style.display = "block";
   }
 
+  //Comentarios
+  function nuevoComment() {
+    const nuevoComentario = document.getElementById('comentarioInput');
+    const listaComentarios = document.getElementById('listaComentarios');
+    if(nuevoComentario.value != ""){
+      const nuevo = document.createElement('div');
+      nuevo.classList.add('Comentario');
+      nuevo.textContent = nuevoComentario.value.trim();
+      listaComentarios.appendChild(nuevo);
+      //Se limpia el campo de texto
+      nuevoComentario.value = "";
+    }
+  }
+
+  function cargarComentarios() {
+
+  }
+
+  function guardarComentario(num,comment) {
+    //const aGuardar = {numero:num,comentario:comment};
+
+  }
+
+  //Redes
   function goToFacebook() {
     window.open("https://www.facebook.com/invalid_page");
   }
@@ -42,6 +67,8 @@ function ampliacionProducts(imgs) {
   function goToWhatsApp() {
     window.open("https://wa.me/11234567890");
   }
+
+  
 
   /*Historia*/
   async function getHistoria(){
