@@ -45,15 +45,17 @@ function ampliacionProducts(imgs) {
   async function cargarComentarios() {
     //Recuperarlos
     const listaComentarios = document.getElementById('listaComentarios');
-    const listaActual = ["Hola","2"];
-    let lista = [];
+    const listaActual = [];
 
-    const recuperados = await fetch("https://lumatamorosva.github.io/Proyecto/comentarios.json")
-    .then(response => response.json())
-    .then(data => {lista.push(data);})
-    lista.forEach(item =>{
-      listaActual.push(item.comentario);
-    });
+    const recuperados = await fetch("https://lumatamorosva.github.io/Proyecto/comentarios.json");
+    if(recuperados.ok){
+      const data = await recuperados.json();
+      const comentarios = data.comentarios;
+      comentarios.forEach(comentario => {
+        listaActual.push(comentario.comentario);
+      })
+    }
+    
     //Mostrarlos
     listaActual.forEach(function(item){
       const nuevo = document.createElement('div');
