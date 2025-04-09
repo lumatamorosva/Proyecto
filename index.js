@@ -42,12 +42,18 @@ function ampliacionProducts(imgs) {
     }
   }
 
-  function cargarComentarios() {
+  async function cargarComentarios() {
     //Recuperarlos
     const listaComentarios = document.getElementById('listaComentarios');
     const listaActual = ["Hola","2"];
+    let lista = [];
 
-    
+    const recuperados = await fetch("https://lumatamorosva.github.io/Proyecto/comentarios.json")
+    .then(response => response.json())
+    .then(data => {lista.push(data);})
+    lista.forEach(item =>{
+      listaActual.add(item.comentario);
+    });
     //Mostrarlos
     listaActual.forEach(function(item){
       const nuevo = document.createElement('div');
