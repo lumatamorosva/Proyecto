@@ -43,7 +43,19 @@ function ampliacionProducts(imgs) {
   }
 
   function cargarComentarios() {
+    //Recuperarlos
+    const listaComentarios = document.getElementById('listaComentarios');
+    const listaActual = ["Hola","2"];
 
+    
+    //Mostrarlos
+    listaActual.forEach(function(item){
+      const nuevo = document.createElement('div');
+      nuevo.classList.add('Comentario');
+      nuevo.textContent = item;
+      listaComentarios.appendChild(nuevo);
+    });
+    
   }
 
   function guardarComentario(num,comment) {
