@@ -29,6 +29,10 @@ function ampliacionProducts(imgs) {
   }
 
   //Comentarios
+  const urlCommentsPut = "";
+  const token1 = "";
+  const urlCom = "https://lumatamorosva.github.io/Proyecto/comentarios.json";
+
   function nuevoComment() {
     const nuevoComentario = document.getElementById('comentarioInput');
     const listaComentarios = document.getElementById('listaComentarios');
@@ -49,7 +53,7 @@ function ampliacionProducts(imgs) {
     const listaComentarios = document.getElementById('listaComentarios');
     const listaActual = [];
 
-    const recuperados = await fetch("https://lumatamorosva.github.io/Proyecto/comentarios.json");
+    const recuperados = await fetch(urlCom);
     if(recuperados.ok){
       const data = await recuperados.json();
       const comentarios = data.comentarios;
@@ -69,23 +73,7 @@ function ampliacionProducts(imgs) {
   }
 
   async function guardarComentario(comment) {
-    const aGuardar = {"comentario": comment};
-    const response = await fetch("https://lumatamorosva.github.io/Proyecto/comentarios.json");
-    if(response.ok){
-      const data = await response.json();
-      data.comentarios.push(aGuardar);
-
-      const saveResponse = await fetch("https://lumatamorosva.github.io/Proyecto/comentarios.json", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-      if(saveResponse.ok) {
-        alert("Yes");
-      }
-    }
+    
   }
 
   //Redes
