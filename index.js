@@ -73,7 +73,57 @@ function ampliacionProducts(imgs) {
   }
 
   async function guardarComentario(comment) {
-    
+    const aGuardar = { "comentario": comment };
+  
+    // Obtener el contenido actual del archivo JSON desde GitHub 
+    //Se le agrega en no-cache para que no cargue una copia desactualizada
+    const response = await fetch(urlCommentsPut, {
+      headers: {
+        Authorization: `Bearer ${token1}`,
+        Accept: "application/vnd.github.v3+json",
+        "Cache-Control": "no-cache",
+      },
+    });
+    //Error por si falla
+    if (!response.ok) {
+      console.error("Error al obtener el archivo:", await response.text());
+      return;
+    }
+    //el sha es un string encriptado del archivo (valor de hash). En github identifica un commit específico
+    const dataActual = await response.json();
+    const sha = dataActual.sha;
+  
+    // Decodificar el contenido base64 a texto
+    const contenidoBase64 = dataActual.content;
+    const contenidoDecodificado = decodeURIComponent(
+      escape(atob(contenidoBase64))
+    );
+    const jsonActual = JSON.parse(contenidoDecodificado);
+  
+    // Agregar el nuevo comentario al arreglo
+    if (!Array.isArray(jsonActual.comentarios)) {
+      jsonActual.comentarios = [];
+    }
+    jsonActual.comentarios.push(aGuardar);
+  
+    // Convertir a base64 el nuevo contenido (en github hay que usar base64)
+    const nuevoContenidoJSON = JSON.stringify(jsonActual, null, 2);
+    const contentBase64 = btoa(unescape(encodeURIComponent(nuevoContenidoJSON)));
+  
+    // Enviar el PUT para actualizar el archivo
+    const respuestaPut = await fetch(urlCommentsPut, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token1}`,
+        Accept: "application/vnd.github.v3+json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: "Agregado nuevo comentario",
+        content: contentBase64,
+        sha: sha,
+      }),
+    });
   }
 
   //Redes
