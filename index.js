@@ -31,7 +31,7 @@ function ampliacionProducts(imgs) {
   //Comentarios
   const urlCommentsPut = "https://api.github.com/repos/lumatamorosva/RecursosProyecto/contents/comentarios.json?ref=main";
   const token1 = import.meta.env.VITE_claveLlamada;
-  const urlCom = "https://lumatamorosva.github.io/Proyecto/comentarios.json";
+  const urlCom = "https://raw.githubusercontent.com/lumatamorosva/RecursosProyecto/main/comentarios.json";
 
   function nuevoComment() {
     const nuevoComentario = document.getElementById('comentarioInput');
@@ -60,6 +60,8 @@ function ampliacionProducts(imgs) {
       comentarios.forEach(comentario => {
         listaActual.push(comentario.comentario);
       })
+    }else{
+      console.log("Error al consumir API");
     }
     
     //Mostrarlos
@@ -69,9 +71,8 @@ function ampliacionProducts(imgs) {
       nuevo.textContent = item;
       listaComentarios.appendChild(nuevo);
     });
-    
   }
-
+/*
   async function guardarComentario(comment) {
     const aGuardar = { "comentario": comment };
   
@@ -124,7 +125,7 @@ function ampliacionProducts(imgs) {
         sha: sha,
       }),
     });
-  }
+  }*/
 
   //Redes
   function goToFacebook() {
