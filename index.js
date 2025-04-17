@@ -29,8 +29,11 @@ function ampliacionProducts(imgs) {
   }
 
   //Comentarios
+  //Requerido para traer la información del ENV
+  require('dotenv').config();
+  //Constantes para las APIs
   const urlCommentsPut = "https://api.github.com/repos/lumatamorosva/RecursosProyecto/contents/comentarios.json?ref=main";
-  const token1 = import.meta.env.VITE_claveLlamada;
+  const token1 = process.env.claveLlamada;
   const urlCom = "https://raw.githubusercontent.com/lumatamorosva/RecursosProyecto/main/comentarios.json";
 
   function nuevoComment() {
