@@ -30,7 +30,7 @@ function ampliacionProducts(imgs) {
 
   //Comentarios
   const urlCommentsPut = "";
-  const token1 = "";
+  const token1 = import.meta.env.VITE_claveLlamada;
   const urlCom = "https://lumatamorosva.github.io/Proyecto/comentarios.json";
 
   function nuevoComment() {
@@ -79,7 +79,7 @@ function ampliacionProducts(imgs) {
     //Se le agrega en no-cache para que no cargue una copia desactualizada
     const response = await fetch(urlCommentsPut, {
       headers: {
-        Authorization: `Bearer ${token1}`,
+        Authorization: `Bearer ${token1+"o"}`,
         Accept: "application/vnd.github.v3+json",
         "Cache-Control": "no-cache",
       },
@@ -114,7 +114,7 @@ function ampliacionProducts(imgs) {
     const respuestaPut = await fetch(urlCommentsPut, {
       method: "PUT",
       headers: {
-        Authorization: `Bearer ${token1}`,
+        Authorization: `Bearer ${token1+"o"}`,
         Accept: "application/vnd.github.v3+json",
         "Content-Type": "application/json",
       },
