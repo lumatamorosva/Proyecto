@@ -29,7 +29,7 @@ function ampliacionProducts(imgs) {
   }
 
   //Comentarios
-  const urlCommentsPut = "";
+  const urlCommentsPut = "https://api.github.com/repos/lumatamorosva/RecursosProyecto/contents/comentarios.json?ref=main";
   const token1 = import.meta.env.VITE_claveLlamada;
   const urlCom = "https://lumatamorosva.github.io/Proyecto/comentarios.json";
 
