@@ -1,5 +1,3 @@
-const { config } = require("dotenv");
-
 /*Geolocation API*/
 function initMap() {
             // Coordenadas de la ubicación
