@@ -31,6 +31,7 @@ function ampliacionProducts(imgs) {
   //Comentarios
   //Requerido para traer la información del ENV
   require('dotenv').config();
+  prueba.js
   //Constantes para las APIs
   const urlCommentsPut = "https://api.github.com/repos/lumatamorosva/RecursosProyecto/contents/comentarios.json?ref=main";
   const token1 = process.env.claveLlamada;
