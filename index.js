@@ -30,7 +30,7 @@ function ampliacionProducts(imgs) {
 
   //Comentarios
   //Consumir el key para el token
-  async function consumirKeyToken() {
+  function consumirKeyToken() {
     fetch("config.json")
       .then(respuest => respuest.json())
       .then(
@@ -47,6 +47,8 @@ function ampliacionProducts(imgs) {
   //Se usará un proxy porque Github no permite solicitudes fetch desde fronend
   const proxy = "https://cors-anywhere.herokuapp.com/";
 
+  //Función para agregar el nuevo comentario en la pantalla y adicionalmente 
+  //mandarlo a guardar de manera permanente
   function nuevoComment() {
     const nuevoComentario = document.getElementById('comentarioInput');
     const listaComentarios = document.getElementById('listaComentarios');
@@ -61,7 +63,7 @@ function ampliacionProducts(imgs) {
       nuevoComentario.value = "";
     }
   }
-
+//Aquí se cargan los comentarios anteriores
   async function cargarComentarios() {
     //Recuperarlos
     const listaComentarios = document.getElementById('listaComentarios');
@@ -92,14 +94,14 @@ function ampliacionProducts(imgs) {
   
     // Obtener el contenido actual del archivo JSON desde GitHub 
     //Se le agrega en no-cache para que no cargue una copia desactualizada
-    const response = await fetch(proxy + urlCommentsPut, {
+    const response = await fetch(urlCommentsPut, {
       headers: {
         Authorization: `Bearer ${token1}`,
         Accept: "application/vnd.github.v3+json",
         "Cache-Control": "no-cache",
       },
     });
-    //Error por si falla
+    //Mostrar Error por si falla
     if (!response.ok) {
       console.error("Error al obtener el archivo:", await response.text());
       console.error("Activar: https://cors-anywhere.herokuapp.com/corsdemo");
