@@ -44,6 +44,8 @@ function ampliacionProducts(imgs) {
   const urlCommentsPut = "https://api.github.com/repos/lumatamorosva/RecursosProyecto/contents/comentarios.json?ref=main";
   const token1 = consumirKeyToken();
   const urlCom = "https://raw.githubusercontent.com/lumatamorosva/RecursosProyecto/main/comentarios.json";
+  //Se usará un proxy porque Github no permite solicitudes fetch desde fronend
+  const proxy = "https://cors-anywhere.herokuapp.com/";
 
   function nuevoComment() {
     const nuevoComentario = document.getElementById('comentarioInput');
@@ -84,13 +86,13 @@ function ampliacionProducts(imgs) {
       listaComentarios.appendChild(nuevo);
     });
   }
-/*
+
   async function guardarComentario(comment) {
     const aGuardar = { "comentario": comment };
   
     // Obtener el contenido actual del archivo JSON desde GitHub 
     //Se le agrega en no-cache para que no cargue una copia desactualizada
-    const response = await fetch(urlCommentsPut, {
+    const response = await fetch(proxy + urlCommentsPut, {
       headers: {
         Authorization: `Bearer ${token1}`,
         Accept: "application/vnd.github.v3+json",
@@ -100,6 +102,7 @@ function ampliacionProducts(imgs) {
     //Error por si falla
     if (!response.ok) {
       console.error("Error al obtener el archivo:", await response.text());
+      console.error("Activar: https://cors-anywhere.herokuapp.com/corsdemo");
       return;
     }
     //el sha es un string encriptado del archivo (valor de hash). En github identifica un commit específico
@@ -137,7 +140,7 @@ function ampliacionProducts(imgs) {
         sha: sha,
       }),
     });
-  }*/
+  }
 
   //Redes
   function goToFacebook() {
