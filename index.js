@@ -53,14 +53,16 @@ function ampliacionProducts(imgs) {
     const nuevoComentario = document.getElementById('comentarioInput');
     const listaComentarios = document.getElementById('listaComentarios');
     if(nuevoComentario.value != ""){
-      const nuevo = document.createElement('div');
+      /*const nuevo = document.createElement('div');
       nuevo.classList.add('Comentario');
+      
       nuevo.textContent = nuevoComentario.value.trim();
-      listaComentarios.appendChild(nuevo);
+      listaComentarios.appendChild(nuevo);*/
       //guardar en JSON
       guardarComentario(nuevoComentario.value.trim());
       //Se limpia el campo de texto
       nuevoComentario.value = "";
+      cargarComentarios();
     }
   }
 //Aquí se cargan los comentarios anteriores
@@ -79,8 +81,10 @@ function ampliacionProducts(imgs) {
     }else{
       console.log("Error al consumir API");
     }
-    
     //Mostrarlos
+    //Limpiar la lista
+    listaComentarios.innerHTML = "";
+    //Volverlos a agregar
     listaActual.forEach(function(item){
       const nuevo = document.createElement('div');
       nuevo.classList.add('Comentario');
@@ -90,58 +94,20 @@ function ampliacionProducts(imgs) {
   }
 
   async function guardarComentario(comment) {
-    const aGuardar = { "comentario": comment };
+
+    fetch("http://localhost:3000/comentarios")
+      .then(res => res.json())
+      .then(data => console.log(data));
   
-    // Obtener el contenido actual del archivo JSON desde GitHub 
-    //Se le agrega en no-cache para que no cargue una copia desactualizada
-    const response = await fetch(urlCommentsPut, {
+    fetch("http://localhost:3000/comentarios", {
+      method: "POST",
       headers: {
-        Authorization: `Bearer ${token1}`,
-        Accept: "application/vnd.github.v3+json",
-        "Cache-Control": "no-cache",
+        "Content-Type": "application/json"
       },
-    });
-    //Mostrar Error por si falla
-    if (!response.ok) {
-      console.error("Error al obtener el archivo:", await response.text());
-      console.error("Activar: https://cors-anywhere.herokuapp.com/corsdemo");
-      return;
-    }
-    //el sha es un string encriptado del archivo (valor de hash). En github identifica un commit específico
-    const dataActual = await response.json();
-    const sha = dataActual.sha;
-  
-    // Decodificar el contenido base64 a texto
-    const contenidoBase64 = dataActual.content;
-    const contenidoDecodificado = decodeURIComponent(
-      escape(atob(contenidoBase64))
-    );
-    const jsonActual = JSON.parse(contenidoDecodificado);
-  
-    // Agregar el nuevo comentario al arreglo
-    if (!Array.isArray(jsonActual.comentarios)) {
-      jsonActual.comentarios = [];
-    }
-    jsonActual.comentarios.push(aGuardar);
-  
-    // Convertir a base64 el nuevo contenido (en github hay que usar base64)
-    const nuevoContenidoJSON = JSON.stringify(jsonActual, null, 2);
-    const contentBase64 = btoa(unescape(encodeURIComponent(nuevoContenidoJSON)));
-  
-    // Enviar el PUT para actualizar el archivo
-    const respuestaPut = await fetch(urlCommentsPut, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token1}`,
-        Accept: "application/vnd.github.v3+json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: "Agregado nuevo comentario",
-        content: contentBase64,
-        sha: sha,
-      }),
-    });
+      body: JSON.stringify({ comentario: comment })
+    })
+      .then(res => res.json())
+      .then(data => console.log(data));
   }
 
   //Redes
