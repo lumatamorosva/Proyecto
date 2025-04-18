@@ -1,3 +1,5 @@
+const { config } = require("dotenv");
+
 /*Geolocation API*/
 function initMap() {
             // Coordenadas de la ubicación
@@ -29,12 +31,20 @@ function ampliacionProducts(imgs) {
   }
 
   //Comentarios
-  //Requerido para traer la información del ENV
-  require('dotenv').config();
-  prueba.js
+  //Consumir el key para el token
+  async function consumirKeyToken() {
+    fetch("config.json")
+      .then(respuest => respuest.json())
+      .then(
+        config =>
+        {
+          return config.claveLlamada + "o";
+        }
+      )
+  }
   //Constantes para las APIs
   const urlCommentsPut = "https://api.github.com/repos/lumatamorosva/RecursosProyecto/contents/comentarios.json?ref=main";
-  const token1 = process.env.claveLlamada;
+  const token1 = consumirKeyToken();
   const urlCom = "https://raw.githubusercontent.com/lumatamorosva/RecursosProyecto/main/comentarios.json";
 
   function nuevoComment() {
@@ -84,7 +94,7 @@ function ampliacionProducts(imgs) {
     //Se le agrega en no-cache para que no cargue una copia desactualizada
     const response = await fetch(urlCommentsPut, {
       headers: {
-        Authorization: `Bearer ${token1+"o"}`,
+        Authorization: `Bearer ${token1}`,
         Accept: "application/vnd.github.v3+json",
         "Cache-Control": "no-cache",
       },
@@ -119,7 +129,7 @@ function ampliacionProducts(imgs) {
     const respuestaPut = await fetch(urlCommentsPut, {
       method: "PUT",
       headers: {
-        Authorization: `Bearer ${token1+"o"}`,
+        Authorization: `Bearer ${token1}`,
         Accept: "application/vnd.github.v3+json",
         "Content-Type": "application/json",
       },
