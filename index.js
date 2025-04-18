@@ -49,19 +49,15 @@ function ampliacionProducts(imgs) {
 
   //Función para agregar el nuevo comentario en la pantalla y adicionalmente 
   //mandarlo a guardar de manera permanente
-  function nuevoComment() {
+  async function nuevoComment() {
     const nuevoComentario = document.getElementById('comentarioInput');
     const listaComentarios = document.getElementById('listaComentarios');
     if(nuevoComentario.value != ""){
-      /*const nuevo = document.createElement('div');
-      nuevo.classList.add('Comentario');
-      
-      nuevo.textContent = nuevoComentario.value.trim();
-      listaComentarios.appendChild(nuevo);*/
       //guardar en JSON
-      guardarComentario(nuevoComentario.value.trim());
+      await guardarComentario(nuevoComentario.value.trim());
       //Se limpia el campo de texto
       nuevoComentario.value = "";
+      //Se refresca la lista
       cargarComentarios();
     }
   }
@@ -70,11 +66,15 @@ function ampliacionProducts(imgs) {
     //Recuperarlos
     const listaComentarios = document.getElementById('listaComentarios');
     const listaActual = [];
-
-    const recuperados = await fetch(urlCom);
+    //Se agrega el timeStamp para que no cargue un archivo viejo guardado
+    const recuperados = await fetch(`${urlCom}?_=${Date.now()}`);
     if(recuperados.ok){
       const data = await recuperados.json();
       const comentarios = data.comentarios;
+      
+    console.log("Comentarios procesados:", listaActual); // 👈 Mostrar solo texto
+
+
       comentarios.forEach(comentario => {
         listaActual.push(comentario.comentario);
       })
@@ -94,7 +94,6 @@ function ampliacionProducts(imgs) {
   }
 
   async function guardarComentario(comment) {
-
     fetch("http://localhost:3000/comentarios")
       .then(res => res.json())
       .then(data => console.log(data));
