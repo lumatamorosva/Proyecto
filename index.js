@@ -71,10 +71,6 @@ function ampliacionProducts(imgs) {
     if(recuperados.ok){
       const data = await recuperados.json();
       const comentarios = data.comentarios;
-      
-    console.log("Comentarios procesados:", listaActual); // 👈 Mostrar solo texto
-
-
       comentarios.forEach(comentario => {
         listaActual.push(comentario.comentario);
       })
