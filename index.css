@@ -377,4 +377,32 @@ h3 {
 .cuadro4 h3 {
     margin-top: 1px;
 }
+
+.contenedorBotones {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 5px;
+}
+
+.contendorBotones input {
+    margin: 5px;
+}
+
+.botonFormulario {
+    margin: 5px;
+    width: 40%;
+}
+
+.motiv button{
+    float: left;
+}
+
+.motiv label{
+    margin-left: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(15px, 3.5vw, 30px);
+    font-weight: bold;
+    color: #0c6863;
+}
 /***** End Contacto *****/

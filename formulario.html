@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-md sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h1 class="title1 m-0">Lyra's Grooming</h1>
+            <img class="logo" src="Images/Logo.png" alt="Logo">
+        </a>
+    </nav>
+    <!-- Navbar End -->
+     
+    <!-- Main Start -->
+    <div class="cuadro cuadro4">
+        <div class="row d-flex">
+            <div class="col-md-6 col-xs-12">
+                <h3>Reserve su cita:</h3>
+                <br>
+                <div class="contendorBotones">
+                    <h4>Ingresa tus datos:</h4>
+                    <div class="col-12">
+                        <input type="text" placeholder="Nombre*">
+                        <input type="text" placeholder="Apellido*">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" placeholder="Teléfono">
+                        <input type="text" placeholder="Correo electrónico*">
+                    </div>
+                    <div class="motiv">
+                        <h4>Motivo del contacto:</h4>
+                        <div id="motivo" class="dropdown">
+                            <button
+                                class="btn btn-secondary dropdown-toggle"
+                                type="button"
+                                id="triggerId"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >Elegir</button>
+                            <div class="dropdown-menu" aria-labelledby="triggerId">
+                                <a class="dropdown-item" href="#">Programar cita para Grooming</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Programar cita Veterinaria</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Compra de artículo</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Quiero ayudar a los callejaros</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Elevar queja</a>
+                            </div>
+                        </div>
+                        <label id="labelMotivo"><span id="selec"> Seleccione el motivo</span></label>
+                            <!-- Para que el label cambie de acuerdo al dropdown-->
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                const items = document.querySelectorAll("#motivo .dropdown-item");
+                                const labelSpan = document.getElementById("selec");
+                            
+                                items.forEach(item => {
+                                    item.addEventListener("click", function (e) {
+                                    labelSpan.textContent = this.textContent;
+                                    });
+                                });
+                                });
+                            </script>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row contenedorBotones">
+                <button class="botonFormulario" id="buttonEnviar" onclick="regresarAContacto()">Enviar</button>
+                <button class="botonFormulario" id="buttonCancelar" onclick="regresarAContacto()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <div class="cuadro cuadro4">
+        <div class="row ayuda">
+            <div class="col-md-6 col-sm-12">
+                <h3>¿Quieres ayudar?</h3>
+                <h4>¡Ellos también merecen un trato digno!
+                     <br>Contamos con un programa dedicado a ayudar a perros callejeros sin hogar.
+                    <br>El 15% de todas las ganancias se destina al programa para acoger y cuidar a los menos afortunados, por lo que al comprar cualquiera de nuestros productos o servicios ya estás ayudando 😀 Pero, si aún así, gustas colaborar más, puedes ayudarnos con voluntariado e insumos.
+                    <br>¡No dudes en ponerte en contacto para saber más; ellos te lo agradecerán profundamente!
+                </h4>
+            </div>
+            <div class="col-md-6 col-sm-12 strays">
+                <img src="Images/Strays.png" alt="Callejeros">
+            </div>
+        </div>
+    </div>
+    <!-- Main End -->
+
+    <!-- Footer Start -->
+    <div class="footer container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    &copy; <a class="border-bottom" href="#">Lyra's Grooming</a>, All Right Reserved.
+                </div>
+                <div class="col-md-12">
+                    Designed By <a class="border-bottom" href="https://github.com/lumatamorosva?tab=repositories">Luis Matamoros</a> IDW512 Final Proyect <a href="https://www.utn.ac.cr/">UTN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <script src="index.js"></script>
+</body>
+</html>

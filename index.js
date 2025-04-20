@@ -17,6 +17,16 @@ function initMap() {
             });
         }
 /*Contacto*/
+//Botones
+function regresarAContacto(){
+  const salir = confirm("Si regresa ahora se borrará la información sin enviar el formulario");
+  if(salir){
+    window.location.href="../contacto.html";
+  }else{
+    return;
+  }
+}
+
 
 /*Principal*/
 //Servicios
@@ -122,8 +132,6 @@ function ampliacionProducts(imgs) {
     window.open("https://wa.me/11234567890");
   }
 
-  
-
   /*Historia*/
   async function getHistoria(){
     const contenedor1 = document.getElementById("mostrarHistoria");
@@ -137,5 +145,4 @@ function ampliacionProducts(imgs) {
 
     //Enviar al frontend
     contenedor1.innerHTML = (parrafos[0]).parrafo1 + "<br><br>" + (parrafos[0]).parrafo2  + "<br><br>" + (parrafos[0]).parrafo3  + "<br><br>" + (parrafos[0]).parrafo4;
-    
   }
