@@ -26,6 +26,42 @@ function regresarAContacto(){
     return;
   }
 }
+function enviarFormulario(){
+  const name = document.getElementById("inputNombre").value;
+  const apellido = document.getElementById("inputApellido").value;
+  const telefono = document.getElementById("inputTelefono").value;
+  const email = document.getElementById("inputEmail").value;
+  //Seleccionar el texto del span del label:
+  const span = document.getElementById("selec");
+  const range = document.createRange();
+  range.selectNodeContents(span);
+  const motivo = window.getSelection();
+  motivo.removeAllRanges();
+  motivo.addRange(range);
+  window.getSelection().removeAllRanges();
+//Verificar los datos ingresados:
+  if(name.trim() == ""){
+    window.alert("No se puede enviar el formulario sin nombre");
+    return;
+  }
+  if(apellido.trim() == ""){
+    window.alert("No se puede enviar el formulario sin un apellido");
+    return;
+  }
+  if(!isNaN(telefono.trim()) == ""){
+    window.alert("No se pueden enviar letras en el teléfono");
+    return;
+  }
+  if(email.trim() == ""){
+    window.alert("No se puede enviar el formulario sin un correo para responder");
+    return;
+  }
+  if(span.textContent == "Seleccione el motivo"){
+    window.alert("Debe seleccionar el motivo primero");
+    return;
+  }
+}
+
 
 
 /*Principal*/

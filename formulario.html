@@ -34,12 +34,12 @@
                 <div class="contendorBotones">
                     <h4>Ingresa tus datos:</h4>
                     <div class="col-12">
-                        <input type="text" placeholder="Nombre*">
-                        <input type="text" placeholder="Apellido*">
+                        <input id="inputNombre" type="text" placeholder="Nombre*">
+                        <input id="inputApellido" type="text" placeholder="Apellido*">
                     </div>
                     <div class="col-12">
-                        <input type="text" placeholder="Teléfono">
-                        <input type="text" placeholder="Correo electrónico*">
+                        <input id="inputTelefono" type="text" placeholder="Teléfono">
+                        <input id="inputEmail" type="text" placeholder="Correo electrónico*">
                     </div>
                     <div class="motiv">
                         <h4>Motivo del contacto:</h4>
@@ -64,7 +64,7 @@
                                 <a class="dropdown-item" href="#">Elevar queja</a>
                             </div>
                         </div>
-                        <label id="labelMotivo"><span id="selec"> Seleccione el motivo</span></label>
+                        <label id="labelMotivo"><span id="selec">Seleccione el motivo</span></label>
                             <!-- Para que el label cambie de acuerdo al dropdown-->
                             <script>
                                 document.addEventListener("DOMContentLoaded", function () {
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="row contenedorBotones">
-                <button class="botonFormulario" id="buttonEnviar" onclick="regresarAContacto()">Enviar</button>
+                <button class="botonFormulario" id="buttonEnviar" onclick="enviarFormulario()">Enviar</button>
                 <button class="botonFormulario" id="buttonCancelar" onclick="regresarAContacto()">Cancelar</button>
             </div>
         </div>
