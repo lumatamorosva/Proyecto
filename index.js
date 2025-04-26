@@ -26,19 +26,15 @@ function regresarAContacto(){
     return;
   }
 }
-function enviarFormulario(){
+//Envío de formulario
+async function enviarFormulario(){
   const name = document.getElementById("inputNombre").value;
   const apellido = document.getElementById("inputApellido").value;
   const telefono = document.getElementById("inputTelefono").value;
   const email = document.getElementById("inputEmail").value;
   //Seleccionar el texto del span del label:
   const span = document.getElementById("selec");
-  const range = document.createRange();
-  range.selectNodeContents(span);
-  const motivo = window.getSelection();
-  motivo.removeAllRanges();
-  motivo.addRange(range);
-  window.getSelection().removeAllRanges();
+  const motivo = span.textContent.trim();
 //Verificar los datos ingresados:
   if(name.trim() == ""){
     window.alert("No se puede enviar el formulario sin nombre");
@@ -60,6 +56,28 @@ function enviarFormulario(){
     window.alert("Debe seleccionar el motivo primero");
     return;
   }
+  //Se crea el objeto
+  const nuevoForm = {nombre: name, apellidos: apellido, tel: telefono, correo: email, razon: motivo};
+  //Se envía por el código de Node.js
+  await guardarForm(nuevoForm);
+  window.location.href="../contacto.html";
+}
+
+async function guardarForm(form) {
+  fetch("http://localhost:3000/formularios")
+    .then(res => res.json())
+    .then(data => console.log(data));
+
+  fetch("http://localhost:3000/formularios", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ formulario: form })
+  })
+    .then(res => res.json())
+    .then(data => console.log(data));
+    alert("Muchas gracias por contactarnos. En poco tiempo se le responderá a su consulta.");
 }
 
 
@@ -101,6 +119,8 @@ function ampliacionProducts(imgs) {
     if(nuevoComentario.value != ""){
       //guardar en JSON
       await guardarComentario(nuevoComentario.value.trim());
+      //Mensaje para el usuario
+      alert("Le agradecemos mucho su comentario; este será verificado por los moderadores y una vez aprobado, aparecerá en nuestra página.");
       //Se limpia el campo de texto
       nuevoComentario.value = "";
       //Se refresca la lista

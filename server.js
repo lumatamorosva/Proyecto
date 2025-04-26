@@ -100,7 +100,7 @@ const apiUrl2 = `https://api.github.com/repos/lumatamorosva/RecursosProyecto/con
 //GET: Leer archivo JSON desde GitHub
 app.get("/formularios", async (req, res) => {
   try {
-    const { data } = await axios.get(apiUrl, {
+    const { data } = await axios.get(apiUrl2, {
       headers: {
         Authorization: `Bearer ${clave}`,
         Accept: "application/vnd.github.v3+json",
@@ -123,7 +123,7 @@ app.post("/formularios", async (req, res) => {
   const nuevoFormulario = req.body.formulario;
   try {
     //Obtener contenido actual
-    const { data } = await axios.get(apiUrl, {
+    const { data } = await axios.get(apiUrl2, {
       headers: {
         Authorization: `Bearer ${clave}`,
         Accept: "application/vnd.github.v3+json",
@@ -139,7 +139,7 @@ app.post("/formularios", async (req, res) => {
     const nuevoContenido = JSON.stringify(json, null, 2);
     const contentBase64 = Buffer.from(nuevoContenido, "utf8").toString("base64");
     //Enviar actualización a GitHub
-    await axios.put(apiUrl, {
+    await axios.put(apiUrl2, {
       message: "Nuevo formulario agregado",
       content: contentBase64,
       sha: data.sha,
