@@ -118,7 +118,8 @@ function ampliacionProducts(imgs) {
     const listaComentarios = document.getElementById('listaComentarios');
     if(nuevoComentario.value != ""){
       //guardar en JSON
-      await guardarComentario(nuevoComentario.value.trim());
+      const paraEnviar = {comentario: nuevoComentario.value.trim()};
+      await guardarComentario(paraEnviar);
       //Mensaje para el usuario
       alert("Le agradecemos mucho su comentario; este será verificado por los moderadores y una vez aprobado, aparecerá en nuestra página.");
       //Se limpia el campo de texto
