@@ -60,7 +60,7 @@ async function enviarFormulario(){
   const nuevoForm = {nombre: name, apellidos: apellido, tel: telefono, correo: email, razon: motivo};
   //Se envía por el código de Node.js
   await guardarForm(nuevoForm);
-  window.location.href="../contacto.html";
+  window.location.href="https://lumatamorosva.github.io/Proyecto/contacto.html";
 }
 
 async function guardarForm(form) {
