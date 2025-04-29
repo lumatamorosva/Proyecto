@@ -63,6 +63,7 @@ async function enviarFormulario(){
   window.location.href="https://lumatamorosva.github.io/Proyecto/contacto.html";
 }
 
+//se está usando un servidor local, para que funcione desde internet, se debe conseguir una IP pública...
 async function guardarForm(form) {
   fetch("http://localhost:3000/formularios")
     .then(res => res.json())
@@ -155,7 +156,8 @@ function ampliacionProducts(imgs) {
       listaComentarios.appendChild(nuevo);
     });
   }
-
+  
+  //se está usando un servidor local, para que funcione desde internet, se debe conseguir una IP pública...
   async function guardarComentario(comment) {
     fetch("http://localhost:3000/comentarios")
       .then(res => res.json())
