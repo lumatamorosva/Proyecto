@@ -1,6 +1,5 @@
 //Requisito para dotenv
 require("dotenv").config();
-//Constantes
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
@@ -16,14 +15,14 @@ const branch = "main";
 const clave = process.env.claveLlamada + "o";
 const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`;
 
-//Para evitar que el navegador haga caché
+//Para evitar que el navegador use el archivo en caché
 const noCacheHeaders = {
     "Cache-Control": "no-cache, no-store, must-revalidate",
     "Pragma": "no-cache",
     "Expires": "0",
   };
 
-//GET: Leer archivo JSON desde GitHub
+//Leer archivo JSON desde GitHub
 app.get("/comentarios", async (req, res) => {
   try {
     const { data } = await axios.get(apiUrl, {
@@ -44,7 +43,7 @@ app.get("/comentarios", async (req, res) => {
   }
 });
 
-//PUT: Guardar nuevo comentario
+//Guardar nuevo comentario
 app.post("/comentarios", async (req, res) => {
   const nuevoComentario = req.body.comentario;
   try {
