@@ -185,7 +185,6 @@ h3 {
 
 .noticias .cuadroNoticias {
     padding: 10px;
-    border: solid black;
     display: flex;
     flex-wrap: wrap;
 }
@@ -250,7 +249,6 @@ h3 {
 
 /***** Start AcercaDe y ubicación  *****/ 
 .cuadro {
-    border: solid black;
     padding: 5%;
     text-align: center;
     margin: 15px;
