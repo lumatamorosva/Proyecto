@@ -22,27 +22,6 @@ const noCacheHeaders = {
     "Expires": "0",
   };
 
-//Leer archivo JSON desde GitHub
-app.get("/comentarios", async (req, res) => {
-  try {
-    const { data } = await axios.get(apiUrl, {
-      headers: {
-        Authorization: `Bearer ${clave}`,
-        Accept: "application/vnd.github.v3+json",
-      },
-    });
-    // Decodificar el base64
-    const contenidoDecodificado = Buffer.from(data.content, "base64").toString("utf8");
-    const json = JSON.parse(contenidoDecodificado);
-    res.json(json);
-  }
-  //Manejo de errores 
-  catch (error) {
-    console.error("Error al leer el archivo:", error.response?.data || error.message);
-    res.status(500).json({ error: "No se pudo leer el archivo." });
-  }
-});
-
 //Guardar nuevo comentario
 app.post("/comentarios", async (req, res) => {
   const nuevoComentario = req.body.comentario;
