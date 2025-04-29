@@ -8,6 +8,21 @@ body {
      width: 100%;
 }
 
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(20px, 5vw, 40px);
+    font-weight: bold;
+    color: #0c6863;
+    width: 100%;
+}
+
+h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(15px, 3.5vw, 30px);
+    font-weight: bold;
+    color: #0c6863;
+}
+
 .sticky-top {
     background-color: rgb(204,220,222,0.95);
 }
@@ -50,10 +65,6 @@ body {
 }
 
 h3 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #0c6863;
     width: 100%;
     margin-top: 20px;
     margin-bottom: 0px;
@@ -82,7 +93,12 @@ h3 {
 
 .carousel1 img{
     object-fit: cover;
-    max-width: 80%;
+    max-width: 70%;
+}
+
+.carousel1 .carousel-item {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .productos {
@@ -162,10 +178,6 @@ h3 {
   }
 
  .noticias .cuadroNoticias h4 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
-    font-weight: bold;
-    color: #0c6863;
     text-align: left;
     margin-left: 15px;
     margin-right: 15px;
@@ -203,7 +215,7 @@ h3 {
 
 #listaComentarios {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
+    font-size: clamp(15px, 3.5vw, 30px);
     font-weight: bold;
     color: #0c6863;
 }
@@ -245,23 +257,8 @@ h3 {
     background-color: rgb(204,220,222,0.95);
 }
 
-.cuadro h3 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: clamp(20px, 5vw, 40px);
-    font-weight: bold;
-    color: #0c6863;
-    width: 100%;
-}
-
 .cuadro .dejalos {
     margin-top: 18%;
-}
-
-.cuadro h4 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: clamp(15px, 3.5vw, 30px);
-    font-weight: bold;
-    color: #0c6863;
 }
 
 .cuadro h5 {
