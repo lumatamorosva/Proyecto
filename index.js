@@ -1,33 +1,39 @@
 /*Geolocation API*/
 function initMap() {
-            // Coordenadas de la ubicación
-            const lat = 9.994909;
-            const lon = -84.230364;
-            const shopLocation = { lat: lat, lng: lon };
-            // Crear el mapa centrado
-            const map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
-                center: shopLocation
-            });
-            // Crear un marcador en la ubicación
-            const marker = new google.maps.Marker({
-                position: shopLocation,
-                map: map,
-                title: "Encuentranos justo aquí!"
-            });
-        }
+  // Coordenadas de la ubicación
+  const lat = 9.994909;
+  const lon = -84.230364;
+  const shopLocation = { lat: lat, lng: lon };
+  // Crear el mapa centrado
+  const map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: shopLocation
+  });
+  // Crear un marcador en la ubicación
+  const marker = new google.maps.Marker({
+    position: shopLocation,
+    map: map,
+    title: "Encuentranos justo aquí!"
+  });
+}
+
+
+
+
 /*Contacto*/
 //Botones
+//Botón de volver
 function regresarAContacto(){
   const salir = confirm("Si regresa ahora se borrará la información sin enviar el formulario");
   if(salir){
-    window.location.href="../contacto.html";
+    window.location.href="https://lumatamorosva.github.io/Proyecto/contacto.html";
   }else{
     return;
   }
 }
-//Envío de formulario
+//Botón de Envío de formulario
 async function enviarFormulario(){
+  //Se crean las constantes para almacenar los datos de los input
   const name = document.getElementById("inputNombre").value;
   const apellido = document.getElementById("inputApellido").value;
   const telefono = document.getElementById("inputTelefono").value;
@@ -35,7 +41,7 @@ async function enviarFormulario(){
   //Seleccionar el texto del span del label:
   const span = document.getElementById("selec");
   const motivo = span.textContent.trim();
-//Verificar los datos ingresados:
+//Verificar los datos ingresados e indicar si existe una incongruencia:
   if(name.trim() == ""){
     window.alert("No se puede enviar el formulario sin nombre");
     return;
@@ -63,7 +69,7 @@ async function enviarFormulario(){
   window.location.href="https://lumatamorosva.github.io/Proyecto/contacto.html";
 }
 
-//se está usando un servidor local, para que funcione desde internet, se debe conseguir una IP pública...
+//se está usando un servidor local; para que funcione desde internet, se debe conseguir una IP pública...
 async function guardarForm(form) {
   fetch("http://localhost:3000/formularios")
     .then(res => res.json())
@@ -85,7 +91,7 @@ async function guardarForm(form) {
 
 /*Principal*/
 //Servicios
-function ampliacionProducts(imgs) {
+  function ampliacionProducts(imgs) {
     var expandImg = document.getElementById("expandedImg");
     var imgText = document.getElementById("imgtext");
     expandImg.src = imgs.src;
@@ -109,10 +115,6 @@ function ampliacionProducts(imgs) {
   const urlCommentsPut = "https://api.github.com/repos/lumatamorosva/RecursosProyecto/contents/comentarios.json?ref=main";
   const token1 = consumirKeyToken();
   const urlCom = "https://raw.githubusercontent.com/lumatamorosva/RecursosProyecto/main/comentarios.json";
-  //Se usará un proxy porque Github no permite solicitudes fetch desde fronend
-  const proxy = "https://cors-anywhere.herokuapp.com/";
-
-  //Función para agregar el nuevo comentario en la pantalla y adicionalmente 
   //mandarlo a guardar de manera permanente
   async function nuevoComment() {
     const nuevoComentario = document.getElementById('comentarioInput');
@@ -156,8 +158,8 @@ function ampliacionProducts(imgs) {
       listaComentarios.appendChild(nuevo);
     });
   }
-  
-  //se está usando un servidor local, para que funcione desde internet, se debe conseguir una IP pública...
+
+  //se está usando un servidor local; para que funcione desde internet, se debe conseguir una IP pública...
   async function guardarComentario(comment) {
     fetch("http://localhost:3000/comentarios")
       .then(res => res.json())
@@ -195,13 +197,10 @@ function ampliacionProducts(imgs) {
   async function getHistoria(){
     const contenedor1 = document.getElementById("mostrarHistoria");
     let parrafos = [];
-    let texto = "Prueba";
-    let counter = 0;
     //API
     const historia = await fetch("https://lumatamorosva.github.io/Proyecto/historia.json")
-    .then(response => response.json())
-    .then(data => {parrafos.push(data);})
-
+      .then(response => response.json())
+      .then(data => {parrafos.push(data);})
     //Enviar al frontend
     contenedor1.innerHTML = (parrafos[0]).parrafo1 + "<br><br>" + (parrafos[0]).parrafo2  + "<br><br>" + (parrafos[0]).parrafo3  + "<br><br>" + (parrafos[0]).parrafo4;
   }
