@@ -74,29 +74,7 @@ app.listen(PORT, () => {
 //Formulario:
 //Constantes
 const apiUrl2 = `https://api.github.com/repos/lumatamorosva/RecursosProyecto/contents/formularios.json`;
-
-//GET: Leer archivo JSON desde GitHub
-app.get("/formularios", async (req, res) => {
-  try {
-    const { data } = await axios.get(apiUrl2, {
-      headers: {
-        Authorization: `Bearer ${clave}`,
-        Accept: "application/vnd.github.v3+json",
-      },
-    });
-    // Decodificar el base64
-    const contenidoDecodificado = Buffer.from(data.content, "base64").toString("utf8");
-    const json = JSON.parse(contenidoDecodificado);
-    res.json(json);
-  }
-  //Manejo de errores 
-  catch (error) {
-    console.error("Error al leer el archivo:", error.response?.data || error.message);
-    res.status(500).json({ error: "No se pudo leer el archivo." });
-  }
-});
-
-//PUT: Guardar nuevo formulario
+//Guardar nuevo formulario
 app.post("/formularios", async (req, res) => {
   const nuevoFormulario = req.body.formulario;
   try {
